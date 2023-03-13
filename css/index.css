@@ -1,0 +1,259 @@
+:root {
+    --color-black: #000000;
+    --color-brown: #8e603e;
+    --color-dark-gray: #505050;
+    --color-light-gray: #d0d0d0;
+    --color-off-white: #fdfdfd;
+    --color-orange: #ff8c5a;
+    --color-purple: #8773f0;
+    --color-yellow: #fcda68;
+}
+nav {
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: 24px 24px;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-off-white);
+    z-index: 10;
+}
+nav p {
+    transition: 0.5s ease-in;
+}
+nav p:hover {
+    text-decoration: underline;
+}
+body {
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Nunito", sans-serif;
+}
+/* hero styling*/
+.hero.button {
+    color: var(--color-off-white);
+    background-color: var(--color-purple);
+    padding: 18px 25px;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+.hero.button:hover {
+    top: -10px;
+}
+
+img.avatar {
+    width: 280px;
+}
+/*my skills*/
+.num {
+    padding: 10px;
+    background-color: #ff8c5a;
+}
+._bg-y {
+    background-color: var(--color-yellow);
+    background-image: url("../assets/wave-purple.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 500px;
+}
+.s-my {
+    padding-bottom: 24px;
+}
+.skill-card {
+    border-top: 1px solid var(--color-dark-gray);
+}
+/*prices*/
+.price-title {
+    background-color: var(--color-yellow);
+}
+.p01 {
+    background-color: var(--color-orange);
+    position: relative;
+}
+.p02 {
+    background-color: #8e603e;
+}
+.p03 {
+    background-color: var(--color-purple);
+}
+.w-num {
+    font-size: 180px;
+    font-weight: 800;
+    opacity: 0.17;
+    position: absolute;
+    color: var(--color-off-white);
+    left: 10px;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+}
+.p01-descri {
+    z-index: 3;
+}
+.p01 p {
+    font-weight: 500;
+}
+/*edu*/
+.edu-exp {
+    background-image: url("../assets/blob-yellow.svg");
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: bottom right;
+}
+/* Timeline Container */
+.timeline {
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+    border-left: 2px solid var(--color-dark-gray);
+}
+
+/* Card container */
+.card {
+    position: relative;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+.tl-t {
+    margin-left: -25px;
+    z-index: 5;
+}
+
+/* Information about the timeline */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Title of the card */
+.title {
+    position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-brown);
+    border-radius: 50%;
+    left: -41px;
+}
+.ppl-box {
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--color-purple);
+}
+/*grid area*/
+.s-descri {
+    grid-area: card;
+}
+.s-my {
+    grid-area: s-my;
+}
+.price-title {
+    grid-area: title;
+}
+.p01 {
+    grid-area: p01;
+}
+.p02 {
+    grid-area: p02;
+}
+.p03 {
+    grid-area: p03;
+}
+.edu-exp-title {
+    grid-area: e-title;
+    align-self: center;
+    padding: 50px;
+}
+.t1 {
+    grid-area: t1;
+}
+.t2 {
+    grid-area: t2;
+}
+.icon {
+    transition: 0.5s ease;
+    top: 0;
+    position: relative;
+}
+
+object.icon:hover {
+    top: -10;
+    background-color: var(--color-yellow);
+}
+/*RWD*/
+@media only screen and (min-width: 992px) {
+    ._flex.hero-main {
+        display: flex;
+        flex-direction: row;
+    }
+    .hero-section .content {
+        width: 50vw;
+    }
+    img.avatar {
+        width: 400px;
+    }
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 40vw);
+        grid-template-rows: auto;
+        grid-template-areas: "s-my card";
+        gap: 24px;
+        justify-content: center;
+        height: 100vh;
+    }
+    .bg-y {
+        background-position: 0% 100%;
+    }
+    .s-my h2 {
+        font-size: 48px;
+    }
+    .price {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr repeat(2, 1.5fr);
+        grid-template-areas:
+            "title title"
+            "p01 p02"
+            "p01 p03";
+        justify-content: center;
+    }
+
+    .edu-exp {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 30vh auto;
+        grid-template-areas:
+            "e-title e-title"
+            "t1 t2";
+
+        justify-content: center;
+    }
+}
+/*footer*/
+footer {
+    padding: 30px 1px;
+}
+footer .icon {
+    padding: 18px;
+    border-radius: 10px;
+    background-color: black;
+}
